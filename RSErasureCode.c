@@ -218,7 +218,8 @@ void test(int k){
 	//-----------Generating message----------
 	GFSymbol data[Size] = {0};//message array
 	srand(time(NULL));
-	for(int i=Size-k; i<Size; i++)
+	// for(int i=Size-k; i<Size; i++)
+    for(int i=0; i<k; i++)
 		data[i] = rand()&mod;//filled with random numbers
 
 	printf("Message(First n-k are zeros): \n");

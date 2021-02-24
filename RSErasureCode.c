@@ -222,7 +222,7 @@ void test(int k){
     for(int i=0; i<k; i++)
 		data[i] = rand()&mod;//filled with random numbers
 
-	printf("Message(First n-k are zeros): \n");
+	printf("Message(Last n-k are zeros): \n");
 	for(int i=0; i<Size; i++)
 		printf("%02X ", data[i]);
 	printf("\n");
@@ -232,7 +232,7 @@ void test(int k){
 	// encodeH(&data[Size-k], k, &data, codeword);
 	encodeL(data, k, codeword);
 
-	memcpy(codeword, data, sizeof(GFSymbol)*Size);
+	// memcpy(codeword, data, sizeof(GFSymbol)*Size);
 
 	printf("Codeword:\n");
 	for(int i=0; i<Size; i++)
@@ -273,11 +273,11 @@ void test(int k){
 	printf("Decoded result:\n");
 	for(int i=0; i<Size; i++){
 		if(erasure[i]) printf("%02X ", codeword[i]);
-		else printf("XX ");
+		else printf("%02X ", data[i]); // printf("XX ");
 	}
 	printf("\n");
 
-	for (int i=0; i<Size; i++){//Check the correctness of the result
+	for (int i=0; i<k; i++){//Check the correctness of the result
 		if(erasure[i] == 1)
 			if(data[i] != codeword[i]){
 				printf("Decoding Error!\n");

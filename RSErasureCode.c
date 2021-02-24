@@ -291,6 +291,6 @@ void test(int k){
 int main(){
 	init();//fill log table and exp table
 	init_dec();//compute factors used in erasure decoder
-	test(Size/4);//test(int k), k: message size
+	test(Size/2);//test(int k), k: message size
 	return 1;
 }

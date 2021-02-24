@@ -13,17 +13,17 @@ Lin, Han and Chung, "Novel Polynomial Basis and Its Application to Reed-Solomon 
 #include <stdint.h>
 #include <stdio.h>
 
+/*
 typedef unsigned char GFSymbol;
 #define len 8//2^len: the size of Galois field
 GFSymbol mask = 0x1D; //GF(2^8): x^8 + x^4 + x^3 + x^2 + 1
 GFSymbol Base[] = {1, 214, 152, 146, 86, 200, 88, 230};//Cantor basis
+*/
 
-/*
 typedef unsigned short GFSymbol;
 #define len 16
 GFSymbol mask = 0x2D;//x^16 + x^5 + x^3 + x^2 + 1
 GFSymbol Base[len] = {1, 44234, 15374, 5694, 50562, 60718, 37196, 16402, 27800, 4312, 27250, 47360, 64952, 64308, 65336, 39198};//Cantor basis
-*/
 
 #define Size (1<<len)//Field size
 #define mod (Size-1)
